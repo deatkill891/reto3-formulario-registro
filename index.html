@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de la persona Usuaria</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="container">
+    <div id="tarjeta" class="card">
+      <div class="card-header bg-primary">
+        <h1 id="titulo">Registro de la persona Usuaria</h1>
+      </div>
+
+      <div class="card-body">
+        <form id="formulario">
+          <fieldset class="seccion">
+            <legend>Datos personales</legend>
+            <div class="row">
+              <div class="col">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control"
+                       placeholder="Escribe tu nombre" required>
+              </div>
+              <div class="col">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" id="apellido" name="apellido" class="form-control"
+                       placeholder="Escribe tu apellido" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="seccion seccion-azul">
+            <legend>Datos de la cuenta</legend>
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo Electrónico</label>
+              <input type="email" id="correo" name="correo" class="form-control"
+                     placeholder="nombre@ejemplo.com" required>
+              <div class="form-text">Nunca compartiremos tu correo con nadie más.</div>
+            </div>
+            <div>
+              <label for="contrasena" class="form-label">Contraseña</label>
+              <input type="password" id="contrasena" name="contrasena" class="form-control"
+                     placeholder="Mínimo 8 caracteres" minlength="8" required>
+            </div>
+          </fieldset>
+
+          <fieldset class="seccion">
+            <legend>Sobre ti</legend>
+            <label for="descripcion" class="form-label">Descripción breve</label>
+            <textarea id="descripcion" name="descripcion" class="form-control" rows="4"
+                      placeholder="Cuéntanos brevemente sobre ti"></textarea>
+          </fieldset>
+
+          <fieldset class="seccion seccion-azul">
+            <legend>Intereses</legend>
+            <div class="form-check-inline">
+              <input type="checkbox" id="interes-tecnologia" name="intereses" value="tecnologia"
+                     class="form-check-input">
+              <label for="interes-tecnologia" class="form-check-label">Tecnología</label>
+            </div>
+            <div class="form-check-inline">
+              <input type="checkbox" id="interes-arte" name="intereses" value="arte"
+                     class="form-check-input">
+              <label for="interes-arte" class="form-check-label">Arte</label>
+            </div>
+            <div class="form-check-inline">
+              <input type="checkbox" id="interes-deporte" name="intereses" value="deporte"
+                     class="form-check-input">
+              <label for="interes-deporte" class="form-check-label">Deporte</label>
+            </div>
+          </fieldset>
+
+          <button type="submit" id="btn-registro" class="btn btn-primary">Registrarse</button>
+          <div id="mensaje" class="alert alert-success" hidden>
+            ¡Registro enviado correctamente!
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const formulario = document.getElementById("formulario");
+
+    formulario.addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("mensaje").hidden = false;
+      formulario.reset();
+    });
+  </script>
+</body>
+</html>
